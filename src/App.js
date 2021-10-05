@@ -17,6 +17,7 @@ import CFT from "./components/pt-tests/CFT";
 import PFT from "./components/pt-tests/PFT";
 import Graph from "./components/chart/Graph";
 import StopWatch from "./components/stopwatch/StopWatch";
+import BmiCalc from "./components/bmi/BmiCalc";
 
 // import AuthVerify from "./common/AuthVerify";
 import EventBus from "./common/EventBus";
@@ -123,7 +124,7 @@ const App = () => {
             </li>
 
             <li className="nav-item">
-              <Link to={"/chart"} className="nav-link">
+              <Link to={"/graph"} className="nav-link">
                 Graph
               </Link>
             </li>
@@ -133,6 +134,13 @@ const App = () => {
                 StopWatch
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link to={"/bmi"} className="nav-link">
+                BmiCalc
+              </Link>
+            </li>
+
 
           </div>
         )}
@@ -150,8 +158,10 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route path="/cft" component={CFT} />
           <Route path="/pft" component={PFT} />
-          <Route path="/chart" component={Graph} />
+          <Route path="/graph" component={Graph} />
           <Route path="/stopwatch" component={StopWatch} />
+          <Route path="/bmi" component={BmiCalc} />
+
         </Switch>
       </div>
 
