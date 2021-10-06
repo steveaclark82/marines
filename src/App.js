@@ -7,7 +7,7 @@ import Login from "./components/users/Login";
 import Register from "./components/users/Register";
 import Graph from "./components/chart/Graph";
 import StopWatch from "./components/stopwatch/StopWatch";
-
+import SearchPage from "./components/SearchPage";
 
 class App extends Component {
 
@@ -17,6 +17,7 @@ class App extends Component {
       <BrowserRouter>
         <NavBar />
         <div className={styles.container}>
+          <SearchPage />
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
           <Route path="/pft" component={PFT} />
