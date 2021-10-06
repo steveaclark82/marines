@@ -65,7 +65,7 @@ const Register = () => {
                 <input type="email" className="form-control"  placeholder="Email@example.com" required 
                 onChange={e => setEmail(e.target.value)}/>
 
-                <Button className="w-100 btn btn-lg btn-primary btn-outline-dark " type="submit">Create Account</Button>
+                <Button className="w-100 btn btn-lg btn-primary" type="submit">Create Account</Button>
 
           </Form>
           

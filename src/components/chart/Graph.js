@@ -5,7 +5,7 @@ const data = {
     labels: ['Three_Mile', 'Row', 'Crunches', 'Movement_Contact', 'Maneuver_Fire', 'Ammo_Lift'],
     datasets: [
         {
-            label: 'USMC pt Chart',
+            label: 'If score for event is 60 or below fail event. If one event failure whole test fails.',
             backgroundColor: 'rgba(21,19,19)',
             borderColor: 'rgba(255,99,132,1)',
             borderWidth: 3,
@@ -18,7 +18,7 @@ const data = {
 
 function Graph() {
     return (
-        <div style={{ height: '500px', width: '800px' }}>
+        <div style={{ height: '400px', width: '900px' }}>
             <Bar
                 data={data}
                 width={100}
