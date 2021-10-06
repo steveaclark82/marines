@@ -1,41 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import SearchBar from './SearchBar';
-import SoldierList from './SoldierList';
-import axios from "axios";
+import React, { useState } from 'react';
 
-const SearchPage = (props) => {
-  const [input, setInput] = useState('');
-  const [soldierListDefault, setSoldierListDefault] = useState();
-  const [soldierList, setSoldierList] = useState();
+function SearchPage() {
 
-  const fetchData = async () => {
-    return await axios('https://127.0.0.1:8000/users/all')
-      .then(response => response.json())
-      .then(data => {
-         setSoldierList(data) 
-         setSoldierListDefault(data)
-       });}
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredName, setFilteredName] = useState("");
 
-  const updateInput = async (input) => {
-     const filtered = soldierListDefault.filter(country => {
-      return country.name.toLowerCase().includes(input.toLowerCase())
-     })
-     setInput(input);
-     setSoldierList(filtered);
+  const people = [
+    "Summerfield",
+    "Dodson",
+    "Engle",
+    "Smith",
+    "Clark"
+  ];
+
+  const displayNames = people.map((person) =>{
+    return (
+      <li>{person}</li>
+    )
+  })
+
+  function handleSearch(newSearchQuery) {
+    setSearchQuery(newSearchQuery);
+    people.map((person) => {
+      if (person.includes(searchQuery)) {
+        setFilteredName(person)
+      }
+    })
   }
 
-  useEffect( () => {fetchData()},[]);
-	
   return (
-    <>
-      <h1>Soldier List</h1>
-      <SearchBar 
-       input={input} 
-       onChange={updateInput}
-      />
-      <SoldierList soldierList={soldierList}/>
-    </>
-   );
+    <div className="SearchPage">
+      <Search handleSearch={handleSearch} />
+      <h2>Soldiers Name:
+          <ul style={{color: "red"}}>
+            {filteredName}
+          </ul>
+      </h2>
+      <br></br>
+        <ul/>
+    </div>
+  );
+}
+
+function Search({handleSearch}) {
+
+  function onChange(e) {
+    handleSearch(e.target.value);
+  }
+
+  return (
+    <div>
+      <label>Search</label>
+      <input type="text" onChange={onChange} />
+    </div>
+  );
 }
 
 export default SearchPage

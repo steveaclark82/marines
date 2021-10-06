@@ -8,6 +8,7 @@ import Register from "./components/users/Register";
 import Graph from "./components/chart/Graph";
 import StopWatch from "./components/stopwatch/StopWatch";
 import SearchPage from "./components/SearchPage";
+import BMI from "./components/bmi/Bmi";
 
 class App extends Component {
 
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/Register" component={Register} />
           <Route path="/Graph" component={Graph} />
           <Route path="/StopWatch" component={StopWatch} />
+          <Route path="/Bmi" component={BMI} />
         </div>
       </BrowserRouter>
     );

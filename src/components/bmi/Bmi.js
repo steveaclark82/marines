@@ -1,99 +1,57 @@
-import React from "react";
-import BmiCalc from "./BmiCalc";
+import React, { Component } from 'react'
+import Range from "./Range";
+import Output from "./Output";
 
-class BMI {
-  state = {
-    firstname: "",
-    lastname: "",
-    gender: "",
-    age: "",
-    height: 0,
-    weight: 0,
-  };
+class BMI extends Component {
+  constructor(props){
+    super(props); 
+    this.state = {
+      height: 175,
+      weight: 73, 
+      bmi: 22.49, 
+      bmiClass: 'Normal'
+    }
+  }
+
+  heightChange = (height) => {
+    this.setState({ height: height}, this.setBmi ); 
+  }
+
+  weightChange = (weight) => {
+    this.setState({ weight: weight }, this.setBmi ); 
+  }
+
+  setBmi = () => {
+    let bmi = ((this.state.weight / this.state.height / this.state.height) * 10000).toFixed(2); 
+    this.setState({ bmi: bmi, bmiClass: this.getBmiClass(bmi) }); 
+  }
+
+  getBmiClass = (bmi) => {
+    if(bmi < 18.5) return 'Underweight'; 
+    if(bmi >= 18.5 && bmi <= 24.9) return 'Normal'; 
+    if(bmi >= 25 && bmi <= 29.9) return 'Overweight'; 
+    if(bmi >= 30) return 'Obese';  
+  }
 
   render() {
     return (
-      <div
-        className="ui form"
-        style={{
-          backgroundColor: "#55ACEE",
-          border: "1px solid black",
-          float: "left",
-          marginLeft: "300px",
-        }}
-      >
-        <h1 style={{ marginLeft: "20px" }}> BMI Calculator</h1>
-        <div className="fields" style={{ marginLeft: "20px" }}>
-          <div className="field">
-            <label>First name</label>
-            <input
-              type="text"
-              value={this.state.firstname}
-              onChange={(e) => this.setState({ firstname: e.target.value })}
-            />
+      <div className="App">
+        <h1>BMI Calculator</h1>
+        <form>
+          <div>
+            <label>Height</label>
+            <Range 
+              value={this.state.height} 
+              onChange={this.heightChange} />
           </div>
-
-          <div className="field">
-            <label>Last name</label>
-            <input
-              type="text"
-              value={this.state.lastname}
-              onChange={(e) => this.setState({ lastname: e.target.value })}
-            />
+          <div>
+            <label>Weight</label>
+            <Range 
+              value={this.state.weight}
+              onChange={this.weightChange} />
           </div>
-        </div>
-        <br />
-
-        <div className="ui input" style={{ marginLeft: "20px" }}>
-          <input
-            type="text"
-            placeholder="Male/Female"
-            value={this.state.gender}
-            onChange={(e) => this.setState({ gender: e.target.value })}
-          />
-        </div>
-        <br />
-        <br />
-        <div className="ui input" style={{ marginLeft: "20px" }}>
-          <input
-            type="text"
-            placeholder="Age(in years)"
-            value={this.state.age}
-            onChange={(e) => this.setState({ age: e.target.value })}
-          />
-        </div>
-        <br />
-        <br />
-        <div className="ui right labeled input" style={{ marginLeft: "20px" }}>
-          <input
-            type="text"
-            placeholder="Enter weight.."
-            value={this.state.weight}
-            onChange={(e) => this.setState({ weight: e.target.value })}
-          />
-          <div className="ui basic label">kg</div>
-        </div>
-        <br />
-        <br />
-        <div className="ui right labeled input" style={{ marginLeft: "20px" }}>
-          <input
-            type="text"
-            placeholder="Enter height..."
-            value={this.state.height}
-            onChange={(e) => this.setState({ height: e.target.value })}
-          />
-          <div className="ui basic label">meters</div>
-        </div>
-        <br />
-        <br />
-
-        <BmiCalc
-          h={this.state.height}
-          w={this.state.weight}
-          name={this.state.firstname}
-        />
-        <br />
-        <br />
+        </form>
+        <Output data={this.state}/>
       </div>
     );
   }
