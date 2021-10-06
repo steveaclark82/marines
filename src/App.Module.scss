@@ -1,9 +1,12 @@
+
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 30px;
+    background-color: darkred;
   }
   
   @media screen and (max-width: 1200px) {
