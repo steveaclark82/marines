@@ -20,6 +20,9 @@ const NavBar = (props) => {
           <Tab component={Link} to="/About" value="/" label="About"></Tab>
           <Tab component={Link} to="/PFT" value="/PFT" label="PFT"></Tab>
           <Tab component={Link} to="/CFT" value="/CFT" label="CFT"></Tab>
+          <Tab component={Link} to="/Graph" value="/Graph" label="Graph"></Tab>
+          <Tab component={Link} to="/StopWatch" value="/StopWatch" label="StopWatch"></Tab>
+          <Tab component={Link} to="/Bmi" value="/Bmi" label="BMI"></Tab>
         </Tabs>
       </Paper>
     </div>

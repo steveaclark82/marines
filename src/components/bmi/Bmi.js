@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import BmiCalc from "./BmiCalc";
 
-class App extends React.Component {
+class BMI {
   state = {
     firstname: "",
     lastname: "",
@@ -19,12 +18,12 @@ class App extends React.Component {
         style={{
           backgroundColor: "#55ACEE",
           border: "1px solid black",
-          float: "center",
-          marginLeft: "100px",
+          float: "left",
+          marginLeft: "300px",
         }}
       >
-        <h1 style={{ marginLeft: "10px" }}> BMI Calculator</h1>
-        <div className="fields" style={{ marginLeft: "100px" }}>
+        <h1 style={{ marginLeft: "20px" }}> BMI Calculator</h1>
+        <div className="fields" style={{ marginLeft: "20px" }}>
           <div className="field">
             <label>First name</label>
             <input
@@ -45,7 +44,7 @@ class App extends React.Component {
         </div>
         <br />
 
-        <div className="ui input" style={{ marginLeft: "100px" }}>
+        <div className="ui input" style={{ marginLeft: "20px" }}>
           <input
             type="text"
             placeholder="Male/Female"
@@ -55,7 +54,7 @@ class App extends React.Component {
         </div>
         <br />
         <br />
-        <div className="ui input" style={{ marginLeft: "100px" }}>
+        <div className="ui input" style={{ marginLeft: "20px" }}>
           <input
             type="text"
             placeholder="Age(in years)"
@@ -65,7 +64,7 @@ class App extends React.Component {
         </div>
         <br />
         <br />
-        <div className="ui right labeled input" style={{ marginLeft: "100px" }}>
+        <div className="ui right labeled input" style={{ marginLeft: "20px" }}>
           <input
             type="text"
             placeholder="Enter weight.."
@@ -76,7 +75,7 @@ class App extends React.Component {
         </div>
         <br />
         <br />
-        <div className="ui right labeled input" style={{ marginLeft: "100px" }}>
+        <div className="ui right labeled input" style={{ marginLeft: "20px" }}>
           <input
             type="text"
             placeholder="Enter height..."
@@ -100,4 +99,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+export default BMI

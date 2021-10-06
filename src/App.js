@@ -4,10 +4,14 @@ import { About, CFT, NavBar, PFT } from "./components";
 import Home from "./components/home/Home"
 import styles from "./App.Module.scss";
 import Login from "./components/users/Login";
-import Register from "./components/users/Register"
+import Register from "./components/users/Register";
+import Graph from "./components/chart/Graph";
+import StopWatch from "./components/stopwatch/StopWatch";
 
 
 class App extends Component {
+
+
   render() {
     return (
       <BrowserRouter>
@@ -19,6 +23,8 @@ class App extends Component {
           <Route path="/cft" component={CFT} />
           <Route path="/Login" component={Login} />
           <Route path="/Register" component={Register} />
+          <Route path="/Graph" component={Graph} />
+          <Route path="/StopWatch" component={StopWatch} />
         </div>
       </BrowserRouter>
     );

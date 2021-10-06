@@ -49,7 +49,7 @@ class Result extends React.Component {
           border: "1px solid black",
           backgroundColor: "#ffef96",
           width: "450px",
-          float: "center",
+          float: "left",
         }}
       >
         <h3 style={{ fontFamily: "sans-serif" }}>{this.healthAdvisor()}</h3>

@@ -14,17 +14,17 @@ class BmiCalc extends React.Component {
     if (!this.props.name) {
       formValid = false;
       count++;
-      error = count + ") firstname cannot be empty. ";
+      error = count + ") firstname cannot be empty. " + " ";
     }
     if (!this.props.h) {
       formValid = false;
       count++;
-      error = error + count + ") Please provide a valid height. ";
+      error = error + count + ") Please provide a valid height. " + " ";
     }
     if (!this.props.w) {
       formValid = false;
       count++;
-      error = error + count + ") Please provide a valid weight. ";
+      error = error + count + ") Please provide a valid weight. " + " ";
     }
 
     if (formValid) {
@@ -38,11 +38,11 @@ class BmiCalc extends React.Component {
   render() {
     //console.log(this.state.error);
     return (
-      <div style={{ marginTop: "400px" }}>
+      <div style={{ marginLeft: "2px" }}>
         <button
           className="ui button"
           type="submit"
-          style={{ marginLeft: "25px" }}
+          style={{ marginLeft: "15px" }}
           onClick={this.calculateBmi}
         >
           Submit

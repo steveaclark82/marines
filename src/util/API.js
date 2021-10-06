@@ -5,13 +5,8 @@ import axios from 'axios';
 //   "Content-Type": "application/json",
 // };
 
-const request = async (endpoint, method, body) => {
+const request = async (endpoint, body) => {
   let url = `http://127.0.0.1:8000/api/${endpoint}/pullups`;
-  // let response = await axios(url, {
-  //   headers: requestHeaders,
-  //   method: method,
-  //   body: body,
-  // });
   let pullups = {
 
     gender: body.gender,
@@ -21,7 +16,6 @@ const request = async (endpoint, method, body) => {
   }
   let response = await axios.post(url, pullups);
   return response.data;
-
 };
 
 export const getPFTScores = async (scores) => {

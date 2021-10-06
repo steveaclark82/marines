@@ -70,7 +70,9 @@ const About = (props) => {
           <Typography variant="body2">
             No, this website is not affiliated with, or endorsed by, the USMC or
             any other government entity. It is a hobby website intended to
-            provide a readily available means of calculating PFT/CFT scores.
+            provide a readily available means of calculating PFT/CFT scores. Any 
+            event that is scored lower than 60 pts is a fail for that event. If one 
+            event is failed then the whole test is failed.
           </Typography>
         </div>
         <div style={{ marginTop: "30px" }}>

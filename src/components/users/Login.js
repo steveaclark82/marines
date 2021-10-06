@@ -31,7 +31,7 @@ const Login = (user) => {
     }
 
     if (redirect) {
-        return <Redirect to='/woddiary'/>
+        return <Redirect to='/home'/>
     }
 
   return (
