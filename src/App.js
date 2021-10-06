@@ -12,7 +12,7 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
-import About from "./components/About";
+import About from "./components/nav/About";
 import CFT from "./components/pt-tests/CFT";
 import PFT from "./components/pt-tests/PFT";
 import Graph from "./components/chart/Graph";

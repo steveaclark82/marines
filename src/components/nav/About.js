@@ -16,7 +16,7 @@ const MCOLink =
   "https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/2052205/mco-610013a-wch-2/";
 const MARADMINLink =
   "https://www.marines.mil/News/Messages/MARADMINS/Article/1869148/forthcoming-change-to-the-physical-fitness-test-pft/";
-const githubLink = "https://github.com/ivasilyev1/usmc-pft";
+const githubLink = "https://github.com/steveaclark82/marines.git";
 
 const About = (props) => {
   return (
