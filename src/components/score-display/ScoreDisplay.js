@@ -62,7 +62,7 @@ const ScoreDisplay = ({
   ) {
     return (
       <div className={styles.container}>
-        <Typography variant="h4">Check graph for scores</Typography>
+        <Typography variant="h4">Loading</Typography>
       </div>
     );
   }

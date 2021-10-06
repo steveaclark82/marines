@@ -1,18 +1,27 @@
 import axios from 'axios';
 
-const requestHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Content-Type": "application/json",
-};
+// const requestHeaders = {
+//   "Access-Control-Allow-Origin": "*",
+//   "Content-Type": "application/json",
+// };
 
 const request = async (endpoint, method, body) => {
-  const url = `http://127.0.0.1:8000/api/${endpoint}`;
-  let response = await axios(url, {
-    headers: requestHeaders,
-    method: method,
-    body: body,
-  });
-  return response.json();
+  let url = `http://127.0.0.1:8000/api/${endpoint}/pullups`;
+  // let response = await axios(url, {
+  //   headers: requestHeaders,
+  //   method: method,
+  //   body: body,
+  // });
+  let pullups = {
+
+    gender: body.gender,
+    age: body.age,
+    reps: body.pullups,
+    score: "0"
+  }
+  let response = await axios.post(url, pullups);
+  return response.data;
+
 };
 
 export const getPFTScores = async (scores) => {
@@ -23,8 +32,10 @@ export const getPFTScores = async (scores) => {
   eventScores["age"] = scores.age;
   eventScores["high_alt"] = scores.high_alt;
   eventScores["gender"] = scores.gender;
-  const body = JSON.stringify(eventScores);
+  const body = eventScores;
+  console.log(body)
   let response = await request("pft", "POST", body);
+
   return response;
 };
 
