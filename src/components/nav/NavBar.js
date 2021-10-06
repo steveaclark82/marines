@@ -16,7 +16,8 @@ const NavBar = (props) => {
           textColor="primary"
           centered
         >
-          <Tab component={Link} to="/" value="/" label="About"></Tab>
+          <Tab component={Link} to="/" value="/" label="Home"></Tab>
+          <Tab component={Link} to="/About" value="/" label="About"></Tab>
           <Tab component={Link} to="/PFT" value="/PFT" label="PFT"></Tab>
           <Tab component={Link} to="/CFT" value="/CFT" label="CFT"></Tab>
         </Tabs>
